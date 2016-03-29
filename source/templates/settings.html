@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+        <title>iith.info</title>
+        
+        <link rel="stylesheet" href="../static/dash.css">
+    
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    </head>
+    
+    <body>
+         <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+             <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><img src="../static/IDP-logo_navbar.png" alt="Brand"/> </a>
+                </div>
+                <div>
+                     <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Courses and People*">
+        </div>
+        <button type="submit" class="btn btn-default btn-primary">Search</button>
+      </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="profile"><span class="glyphicon glyphicon-user"></span> </a></li>
+                        <li><a href="add_class"><span class="glyphicon glyphicon-plus"></span> </a></li>
+                        <li><a href="bus"><span class="glyphicon glyphicon-road"></span> </a></li>
+                        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Course Options</a></li>
+            <li><a type="button" data-toggle="modal" data-target="#checkSet">Settings</a></li>            
+            <li role="separator" class="divider"></li>
+            <li><a href="logout">Log out</a></li>
+          </ul>
+        </li>
+
+                    </ul>
+                 </div>
+             </div>
+        </nav>  
+   <div class="container mainback">
+       <h2>Privacy Settings: </h2>
+       <h4>By default, privacy settings are set to 'Private'. On 'Private' mode, other people can not view the list of courses you have opted for your current semester. On 'Public' mode, any student can view the list of courses you have opted for your current semester. </h4>
+       <div class="btn-group" data-toggle="buttons" style="margin:1.5em">
+  <label class="btn btn-default btn-lg active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Private
+  </label>
+  <label class="btn btn-default btn-lg">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Public
+  </label>
+  <button type="submit" class="btn btn-primary btn-lg">Confirm</button>
+</div>
+       <h2>Change your name: </h2>
+       <h4>You can change the name on your profile. </h4>
+       <form class="form-inline" style="margin:1.5em">
+  <div class="form-group">
+    <div class="input-group input-group-lg">
+      <input type="text" class="form-control" id="fnamechange" placeholder="{{fname}}">
+    </div>
+    <div class="input-group input-group-lg">
+      <input type="text" class="form-control" id="fnamechange" placeholder="{{lname}}">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg">Change</button>
+</form>
+       <h2>Change your password: </h2>
+       <h4>You can change your current password. </h4>
+       <form class="form-inline" style="margin:1.5em">
+ 
+  <div class="form-group form-group-lg">
+    <input type="password" class="form-control" id="oldpass" placeholder="Current Password">
+  </div>
+ <div class="form-group form-group-lg">
+    <input type="password" class="form-control" id="newpass" placeholder="New Password">
+  </div>
+            <div class="form-group form-group-lg">
+    <input type="password" class="form-control" id="newpasscheck" placeholder="Confirm Password">
+  </div>
+
+
+        <button type="submit" class="btn btn-primary btn-lg">Change Password</button>
+       
+       </form>
+
+</div>
+        
+    
+    </body>
+
+</html>

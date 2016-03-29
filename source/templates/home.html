@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>        
+        <meta charset="utf-8">
+        
+        <title>iith.info</title>
+        
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <link rel="stylesheet" href="../static/home.css">
+    </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+               <div class="navbar-header">
+                    <a class="navbar-brand" href="login"><img src="../static/IDP-logo_navbar.png"/></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a id="tool" data-toggle="tooltip" title="iith.info is a 2016 IDP by Gowtham M, Ankith D, Sai puneet, Srujan B and Ramesh N" style="font-size:1.5em"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
+                        <li><a data-toggle="modal" data-target="#registerModal" type="button" style="font-size:1.5em"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container" id="main">
+            <div class="well">
+                <img src="../static/IDP-logo_small.png" alt="" class="img-responsive"/>
+                <h1>Hello There!</h1>
+                <h3 id="h3_1">If you still haven't registered at iith.info:</h3>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registerModal"><span class="glyphicon glyphicon-user"></span> Register as a Student</button>
+                <h3>If you have already registered:</h3>
+                <form role="form" method="POST">
+                    <div class="row">
+                       <div class="form-group ">
+                           <input type="text" class="form-control" id="username" name="username" placeholder="Enter Roll Number">
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group ">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-lock"></span> Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+                                    <!-- Modal -->
+        <div id="registerModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h2 class="modal-title" style="text-align:center;"><span class="glyphicon glyphicon-check"></span><strong> Sign up</strong></h2>
+                  <p>Please fill in your credentials. Moderators will verify your name, so do enter your real name.</p>
+              </div>
+              <div class="modal-body">
+                <div id="regWarning" class="alert alert-danger text-center" style="display:none">
+                  <strong>Invalid Input!</strong><p id="regWarningError"></p>
+                </div>
+                <form id="regForm" class="form-horizontal" role="form">
+                  <div class="form-group form-group-lg">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input autocomplete="off"  name="fname" type="text" class="form-control nameField wrong" id="fname" placeholder="First Name" onkeypress="console.log('pressed');">
+                    </div>
+                  </div>
+                  <div class="form-group form-group-lg">
+                    <div class="col-sm-6 col-sm-offset-3"> 
+                      <input autocomplete="off" name="lname" type="text" class="form-control nameField wrong" id="lname" placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div id="roll_input" class="input-group input-group-lg  inputs" style="padding-bottom: 20px">
+                        <input autocomplete="off" name="roll" type="text" class="form-control regRollField wrong" placeholder="Roll Number" aria-describedby="sizing-addon1">
+                        <span class="input-group-addon" id="basic-addon1">@iith.ac.in</span>
+                    </div>
+                    <div class="form-group">
+                      <button type="button" id="regSubmit" class="btn btn-primary btn-lg" onclick="register()"><span class="glyphicon glyphicon-plus"></span><strong> Submit</strong></button>  
+                    </div>
+
+              </form>
+              <div id="thanks" class="text-center" style="display:none;">
+                  <div id="changePassWarning" class="alert alert-danger text-center" style="display:none">
+                      <strong>Invalid Input!</strong><p id="changePassWarningError"></p>
+                  </div>
+                  <h1>Thank You For Registering!</h1>
+                  <p style="font-size:1.2em">Please check your E-mail for the temporary password and use it to set your permanent password. Note that this temporary password is only valid for 1 hour. If you have any problems with the password you may re-request it using the link at the bottom.</p>
+                  <form id="setPass" class="form-vertical" role="form">
+                      <div id="roll_input" class="input-group input-group-lg inputs" style="padding-bottom: 20px">
+                        <input autocomplete="off" name="roll" type="text" class="form-control changePassRollField wrong" placeholder="Roll Number" aria-describedby="sizing-addon1">
+                        <span class="input-group-addon" id="basic-addon1">@iith.ac.in</span>
+                    </div>
+                      <div class="form-group form-group-lg">
+                          <input name="tempPass" type="password" class="form-control wrong" placeholder="Enter Temporary Password">
+                      </div>
+                      <div class="form-group form-group-lg">
+                          <input name="newPass" type="password" class="form-control wrong" placeholder="Enter New Password">
+                      </div>
+                      <div class="form-group form-group-lg">
+                          <input name="newPassConfirm" type="password" class="form-control wrong" placeholder="Confirm New Password">
+                      </div>
+                      <button type="button" id="passResetSubmit" class="btn btn-primary btn-lg" onclick="change_pass();"><span class="glyphicon glyphicon-plus"></span><strong> Submit</strong></button>
+                  </form>
+              </div>
+              <div id="done" style="display:none;">
+                  <h1 class="text-center">All Done!</h1>
+                  <h3 class="text-center">Please use your login information to log in on the main page.</h3>
+              </div>
+              </div>
+              <div class="modal-footer">
+                  <!--
+                      <button class="btn btn-danger btn-lg pull-left" data-dismiss="modal" data-target="#registerModal"><span class="glyphicon glyphicon-cross"></span> Exit</button>
+                  -->
+                  <span style="float:left"><a onclick="force_thanks()">Already have Registration Email</a>?</span> <span class="text-right">Problems Registerting? Contact us at: <a>iithyderabad.info@gmail.com</a></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </body>
+    <script rel="javascript" type="text/javascript" src="../static/home.js"></script>
+</html>

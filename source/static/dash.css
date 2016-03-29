@@ -1,0 +1,193 @@
+body { 
+  background: url(morning.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.greet {
+    height: 500px;
+}
+
+.alert {
+        visibility: hidden;
+        width: auto;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+
+    }
+
+@media screen and (max-width: 1200px) {
+    .alert {
+        visibility: visible;
+    }
+}
+
+.mainback {
+    height: 100vh;
+    margin-top: -71px;
+    background-color: gainsboro;
+    opacity: 0.95;
+    padding-top: 71px;
+}
+
+  #header {
+    min-height: 50vh;
+  }
+ 
+.slot {
+    width: 30vh;
+    float: right;
+    height: 10vh;
+    margin: 10px;
+}
+.timeline {
+    height: 220vh;
+    width: 10vh;
+    padding: 0px;
+    float: left;
+}
+.slots {
+    width: 23em;
+    height: 230vh;
+    float: right;
+}
+.timel_holder {
+    height: 60vh;
+    margin-left: -2.5em;
+    margin-top: 1em;
+    width: 35em;
+    overflow-y: scroll;
+    border-radius: 1em;
+    background-color: aliceblue;
+    float: left;
+}
+
+.one_hr {
+    margin-top:1.2vh;
+    height: 14vh;
+    border-radius: 1em;
+    background-color:skyblue;
+    padding: 2em;
+}
+
+.period {
+    margin-top:1.2vh;
+    border-radius: 1em;
+    background-color:skyblue;
+    padding: 1em;
+}
+
+.eperiod {
+/*    background-color: red;*/
+/*    visibility: hidden;*/
+}
+    
+.breakfast {
+    margin-top: 17.5vh;
+    height: 21.5vh;
+    border-radius: 1em;
+    background-color:bisque;
+    padding-top: auto;
+    text-align: center;
+    font-size: 4vh;
+    padding-top: 2em;
+}
+
+.snacks {
+    margin-top:1.2vh;
+    height: 14vh;
+    border-radius: 1em;
+    background-color:bisque;
+    padding: 2em;
+    padding-top: 4vh;
+    text-align: center;
+    font-size: 4vh;
+}
+.dinner {
+    margin-top: 1.2vh;
+    height: 28vh;
+    border-radius: 1em;
+    background-color:bisque;
+    padding: 2em;
+    padding-top: 2.8em;
+    text-align: center;
+    font-size: 4vh;
+}
+.lunch {
+    margin-top: 1.2vh;
+    height: 21.5vh;
+    border-radius: 1em;
+    background-color:bisque;
+    padding: 2.5em;
+    padding-top: auto;
+    text-align: center;
+    font-size: 4vh;
+}
+
+.line_img {
+    width: 10vh;
+    height: 230vh;
+}
+
+.view {
+    width: 55vh;
+    float: right;
+    height: 60vh;
+    border-radius: 1em;
+    background-color: lightskyblue;
+    padding: 1em;
+    margin-top: 1vh;
+}
+tr {
+    height: 6.5em;
+    text-align: center;
+    vertical-align: middle;
+}
+th {
+        text-align: center;
+    vertical-align: middle;
+}
+td {
+        text-align: center;
+    vertical-align: middle;
+}
+
+.greet {
+    text-align: center;
+    color: aliceblue;
+    font-family:sans-serif;
+    font-size: 10vh;
+    font-size-adjust: auto;
+    vertical-align: bottom;
+}
+.pads {
+    height: 25vh;
+    color: aliceblue;
+    padding: 15px;
+    font-size: 4em;
+}
+
+#loading {
+    margin: auto;
+}
+
+#credits, #room, #segment {
+    font-size: 1em;
+}
+#credits {
+    float: left;
+    width: 33%;
+}
+#room {
+   text-align: center;
+    width: 33%;
+}
+#segment {
+    float: right;
+    width: 33%;
+}

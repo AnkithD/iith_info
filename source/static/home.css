@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    background: url(../static/bg1.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+div.well {
+    border: hidden;
+    text-align: center;
+    color: white;
+    background-color: black;
+    opacity: 0.85;
+    border-radius: 15px;
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 0px;
+    padding-top: 20px;    
+}
+
+div.row  {
+  width: 200px;
+  margin: 0 auto
+}
+
+div.container img {
+    margin: 0px auto;
+    padding: 0px;
+}
+
+#roll_input {
+    margin-left: calc(50% - 135px);
+    width: 270px;
+}
+
+div.modal-header p {
+    text-align: center;
+}
+
+div.modal-footer {
+    background-color: #F9F9F9;
+}
+
+@media screen and (max-height: 595px) {    
+
+    div.well{
+        top: 5px;
+        transform: translate(-50%, 0%);
+    }
+}
+
+@media screen and (max-height: 545px) {
+    div.well img {
+        height: 0px;
+    }
+    div.well h1 {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+}
+@media screen and (max-height: 455px) {
+    div.well h1 {
+        height: 0px;
+        visibility: hidden;        
+    }
+}
+
+.tooltip {
+    font-size: 20px;
+}
+
+#regSubmit {
+    padding-left: 15px;
+    margin-left: calc(50% - 75px);
+    width: 130px;
+}
+
+#thanks form {
+    padding-top: 10px;
+}
+#thanks input[name*="Pass"] {
+    width: 250px;
+    margin-left: calc(50% - 125px)
+}
+#regWarning {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.wrong, .wrong:focus {
+    border-color: red;
+}

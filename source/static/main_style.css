@@ -1,0 +1,23 @@
+.backdiv {
+    background-color: lightgrey;
+    border-radius: 15px;
+}
+.pretext {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.pad {
+    padding-left: 20px;
+}
+.inputs {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    
+}
+.cinputs {
+    padding-top: 20px;
+    margin: auto;
+    width: 400px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+        <title>iith.info</title>
+        
+        <link rel="stylesheet" href="../static/dash.css">
+    
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script>
+            function add_d() {
+                var year = document.getElementById("year").value;
+                var dept = document.getElementById("dept").value;
+                var result = dept + " " + year;
+
+                var resultOption = document.createElement("option");
+                resultOption.value = result;
+                resultOption.text = result;
+                document.getElementById("selResult").appendChild(resultOption);
+            }
+            function add_c() {
+                var course = document.getElementById("course").value;
+                var result = course;
+
+                var resultOption = document.createElement("option");
+                resultOption.value = result;
+                resultOption.text = result;
+                document.getElementById("selResult").appendChild(resultOption);
+            }
+            function add_stud_a() {
+                var stud_a = document.getElementById("stud_a").value;
+                var result = "with " + stud_a;
+
+                var resultOption = document.createElement("option");
+                resultOption.value = result;
+                resultOption.text = result;
+                document.getElementById("selResult").appendChild(resultOption);
+            }
+            function add_stud_d() {
+                var stud_d = document.getElementById("stud_d").value;
+                var result = "except " + stud_a;
+
+                var resultOption = document.createElement("option");
+                resultOption.value = result;
+                resultOption.text = result;
+                document.getElementById("selResult").appendChild(resultOption);
+            }
+        </script>
+    
+    </head>
+    
+    <body>
+         <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+             <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><img src="../static/IDP-logo_navbar.png" alt="Brand"/> </a>
+                </div>
+                <div>
+                     <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Courses and People*">
+        </div>
+        <button type="submit" class="btn btn-default btn-primary">Search</button>
+      </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="profile"><span class="glyphicon glyphicon-user"></span> </a></li>
+                        <li><a href="add_class"><span class="glyphicon glyphicon-plus"></span> </a></li>
+                        <li><a href="bus"><span class="glyphicon glyphicon-road"></span> </a></li>
+                        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Course Options</a></li>
+            <li><a type="button" data-toggle="modal" data-target="#checkSet">Settings</a></li>            
+            <li role="separator" class="divider"></li>
+            <li><a href="logout">Log out</a></li>
+          </ul>
+        </li>
+
+                    </ul>
+                 </div>
+             </div>
+        </nav>  
+    
+   <div class="container mainback">
+       
+       <h2>Allot a slot for a class:</h2>
+       <h4>Using the alternative inputs, please optimise the attendees of the class.</h4>
+       <p>Choose the appropriate batch:</p>
+       <div class="form-group col-md-3">
+        <label for="sel1">Batch Year:</label>
+        <select class="form-control" id="year">
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+        </select>
+       </div>
+       <div class="form-group col-md-3">
+        <label for="sel1">Department:</label>
+        <select class="form-control" id="dept">
+            <option value="CS">CS</option>
+            <option value="EE">EE</option>
+            <option value="ME">ME</option>
+            <option value="CH">CH</option>
+            <option value="CE">CE</option>
+            <option value="ES">ES</option>
+            <option value="EP">EP</option>
+            <option value="MS">MS</option>
+        </select>
+           <input class="btn btn-default" type="button" value="Add" onClick="javascript:add_d()"/></div>
+       <div style="float: left; clear:left">
+       <p>Choose an appropriate course:</p>
+       
+       <div class="form-group col-md-3">
+        <label for="sel1">Course:</label>
+        <select class="form-control" id="course">
+            <option value="LA1080">LA1080</option>
+            <option value="XXxxxx">XXxxxx</option>
+        </select>
+           <input class="btn btn-default" type="button" value="Add" onClick="javascript:add_c()"/></div>
+       </div>              
+              <div style="float: left; clear:left">
+
+       <p>Add or Remove specific students:</p>
+       <div class="form-group">
+        <label for="sel1">Add Student:</label>
+        <select class="form-control" id="stud_a">
+            <option value="cs15b25">CS15BTECH11025</option>
+            <option value="cs15b18">CS15BTECH11018</option>
+        </select>
+           <input class="btn btn-default" type="button" value="Add" onClick="javascript:add_stud_a()"/>
+                  </div></div>
+       <div style="float: left; clear:left">
+       <div class="form-group">
+        <label for="sel1">Remove Student:</label>
+        <select class="form-control col-md-3" id="stud_d">
+            <option value="cs15b25">CS15BTECH11025</option>
+            <option value="cs15b18">CS15BTECH11018</option>
+        </select>
+           <input class="btn btn-default" type="button" value="Add" onClick="javascript:add_stud_d()"/>
+                  </div></div>
+<div style="float:left; clear:left">
+        <h3>The Submitted List:</h3>
+       
+        <form action ="." method="post">
+             <div class="form-group">
+            <select class="form-control col-md-6" id="selResult"></select>
+            </div>
+            <input class="btn btn-primary" type="button" value="Submit"/>
+        </form>
+       </div>
+       
+        </div>
+    </body> 
+
+</html>
